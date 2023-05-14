@@ -1,7 +1,10 @@
+vim.o.termguicolors = true
+vim.cmd('colorscheme poimandres')
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 
 vim.opt.smartindent = true
 
@@ -12,3 +15,6 @@ vim.opt.hlsearch = false
 vim.opt.scrolloff = 10
 
 vim.g.mapleader = " "
+
+vim.o.foldmethod = "indent"
+vim.o.foldlevel = 2
