@@ -17,4 +17,6 @@ vim.opt.scrolloff = 10
 vim.g.mapleader = " "
 
 vim.o.foldmethod = "indent"
-vim.o.foldlevel = 2
+vim.o.foldlevel = 3
+
+vim.opt.cursorline = true
