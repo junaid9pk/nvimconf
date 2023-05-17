@@ -4,7 +4,10 @@ vim.cmd('colorscheme poimandres')
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.expandtab = true
 vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 
 vim.opt.smartindent = true
 
@@ -20,3 +23,6 @@ vim.o.foldmethod = "indent"
 vim.o.foldlevel = 3
 
 vim.opt.cursorline = true
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
