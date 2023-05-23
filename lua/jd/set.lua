@@ -14,6 +14,8 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 vim.opt.hlsearch = false
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.opt.scrolloff = 10
 
