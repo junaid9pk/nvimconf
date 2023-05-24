@@ -5,6 +5,11 @@ require("nvim-tree").setup{
   },
   filters = {
     dotfiles = false,
-    git_clean = false,
+  },
+  git = {
+    enable = true,
+    ignore = false,
+    timeout = 1000,
   }
+
 }
