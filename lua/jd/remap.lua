@@ -5,11 +5,18 @@ vim.keymap.set("n", "<leader>sy", "\"+y")
 vim.keymap.set("n", "<leader>sp", "\"+p")
 vim.keymap.set("n", "<leader>sY", "\"+Y")
 
+-- tabs
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>t<leader>", ":tabnext")
+vim.keymap.set("n", "<leader>tm", ":tabmove")
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>")
+vim.keymap.set("n", "<leader>to", ":tabonly<CR>")
+
 -- screen
-vim.keymap.set("n", "<leader>wwi", "<C-w>><CR>")
-vim.keymap.set("n", "<leader>wwd", "<C-w><<CR>")
-vim.keymap.set("n", "<leader>whi", "<C-w>+<CR>")
-vim.keymap.set("n", "<leader>whd", "<C-w>-<CR>")
+vim.keymap.set("n", "<leader>wwi", "5<C-w>><CR>")
+vim.keymap.set("n", "<leader>wwd", "5<C-w><<CR>")
+vim.keymap.set("n", "<leader>whi", "5<C-w>+<CR>")
+vim.keymap.set("n", "<leader>whd", "5<C-w>-<CR>")
 
 -- diagnostics
 vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
