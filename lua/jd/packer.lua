@@ -54,18 +54,22 @@ return require('packer').startup(function(use)
   },
 
   use({
-      "kylechui/nvim-surround",
-      tag = "*",
-      config = function()
-          require("nvim-surround").setup({})
-      end
+    "kylechui/nvim-surround",
+    tag = "*",
+    config = function()
+        require("nvim-surround").setup({})
+    end
   }),
 
   use {
-      'numToStr/Comment.nvim',
-      config = function()
-          require('Comment').setup()
-      end
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  },
+
+  use {
+    "pocco81/auto-save.nvim"
   }
 }
 
