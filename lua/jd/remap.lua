@@ -13,10 +13,10 @@ vim.keymap.set("n", "<leader>tc", ":tabclose<CR>")
 vim.keymap.set("n", "<leader>to", ":tabonly<CR>")
 
 -- screen
-vim.keymap.set("n", "<leader>wwi", "5<C-w>><CR>")
-vim.keymap.set("n", "<leader>wwd", "5<C-w><<CR>")
-vim.keymap.set("n", "<leader>whi", "5<C-w>+<CR>")
-vim.keymap.set("n", "<leader>whd", "5<C-w>-<CR>")
+vim.keymap.set("n", "<leader>wwi", "5<C-w>>")
+vim.keymap.set("n", "<leader>wwd", "5<C-w><")
+vim.keymap.set("n", "<leader>whi", "5<C-w>+")
+vim.keymap.set("n", "<leader>whd", "5<C-w>-")
 
 -- diagnostics
 vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
