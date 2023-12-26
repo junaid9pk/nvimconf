@@ -7,7 +7,9 @@ vim.keymap.set("n", "<leader>sY", "\"+Y")
 
 -- tabs
 vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
-vim.keymap.set("n", "<leader>t<leader>", ":tabnext")
+vim.keymap.set("n", "<leader>tg", ":tabnext")
+vim.keymap.set("n", "<leader>t<leader>", ":tabnext<CR>")
+vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>")
 vim.keymap.set("n", "<leader>tm", ":tabmove")
 vim.keymap.set("n", "<leader>tc", ":tabclose<CR>")
 vim.keymap.set("n", "<leader>to", ":tabonly<CR>")
