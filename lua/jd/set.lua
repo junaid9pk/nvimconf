@@ -1,5 +1,4 @@
 vim.o.termguicolors = true
-vim.cmd('colorscheme poimandres')
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -25,6 +24,3 @@ vim.o.foldmethod = "indent"
 vim.o.foldlevel = 3
 
 vim.opt.cursorline = true
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
