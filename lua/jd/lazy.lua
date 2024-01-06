@@ -11,4 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("jd.plugins")
+require("lazy").setup({ {import = "jd.plugins"}, {import = "jd.plugins.lsp"} }, {
+    checker = {
+        enabled = true,
+        notify = false,
+    },
+    change_detector = {
+        notify = false,
+    }
+})
