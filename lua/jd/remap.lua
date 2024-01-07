@@ -1,10 +1,9 @@
-
 -- system clipboard
-vim.keymap.set("n", "<leader>sy", "\"+y")
+vim.keymap.set("n", "<leader>sy", "\"+yy")
 vim.keymap.set("n", "<leader>sp", "\"+p")
-vim.keymap.set("n", "<leader>sY", "\"+Y")
+vim.keymap.set("v", "<leader>y", "\"+Y")
 
--- text
+-- move text
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
 vim.keymap.set("v", "<A-k>", ":m '>+1<CR>gv=gv")
