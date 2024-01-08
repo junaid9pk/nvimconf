@@ -17,6 +17,7 @@ require("lazy").setup({ {import = "jd.plugins"}, {import = "jd.plugins.lsp"} }, 
         notify = false,
     },
     change_detector = {
+        enabled = true,
         notify = false,
     }
 })

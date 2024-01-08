@@ -26,3 +26,4 @@ vim.g.mapleader = " "
 vim.o.foldmethod = "indent"
 vim.o.foldlevel = 3
 
+vim.o.undofile = true
