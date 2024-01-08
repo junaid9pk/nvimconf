@@ -25,6 +25,9 @@ return {
             opts.desc = "Go to declaration"
             keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
+            opts.desc = "Restart LSP"
+            keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
             opts.desc = "Show LSP definitions"
             keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
 
@@ -51,9 +54,6 @@ return {
 
             opts.desc = "Show documentation for what is under cursor"
             keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
-
-            opts.desc = "Restart LSP"
-            keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
         end
 
         -- used to enable autocompletion (assign to every lsp server config)
@@ -98,8 +98,9 @@ return {
             filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
         })
 
-        -- configure emmet language server
+        -- configure omnisharp (c#)
         lspconfig["omnisharp"].setup({
+            cmd = { "omnisharp" },
             capabilities = capabilities,
             on_attach = on_attach,
             filetypes = { "cs" },
