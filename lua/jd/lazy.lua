@@ -14,10 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({ {import = "jd.plugins"}, {import = "jd.plugins.lsp"} }, {
     checker = {
         enabled = true,
-        notify = false,
+        notify = false
     },
     change_detector = {
         enabled = true,
-        notify = false,
+        notify = false
     }
 })

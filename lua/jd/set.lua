@@ -23,7 +23,11 @@ vim.opt.scrolloff = 10
 
 vim.g.mapleader = " "
 
-vim.o.foldmethod = "indent"
+vim.o.foldmethod = "expr"
 vim.o.foldlevel = 3
+vim.o.nofoldenable = true
+vim.o.foldnestmax = 10
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
 
 vim.o.undofile = true
