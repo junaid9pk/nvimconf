@@ -95,7 +95,7 @@ return {
         lspconfig["emmet_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "php" },
         })
 
         -- configure omnisharp (c#)
@@ -104,6 +104,13 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
             filetypes = { "cs" },
+        })
+
+        -- configure intelephense
+        lspconfig["intelephense"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { "php" },
         })
 
         -- configure lua server (with special settings)
