@@ -16,6 +16,10 @@ return {
 
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
+                "c",
+                "vim",
+                "vimdoc",
+                "query",
                 "html",
                 "javascript",
                 "typescript",
@@ -32,7 +36,7 @@ return {
                 enable = true,
             },
             indent = {
-                enable = true
+                enable = true,
             },
             incremental_selection = {
                 enable = true,
