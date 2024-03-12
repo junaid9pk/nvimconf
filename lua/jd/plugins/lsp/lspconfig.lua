@@ -79,6 +79,12 @@ return {
             on_attach = on_attach,
         })
 
+        -- configure quick_lint_js server with plugin
+        lspconfig["quick_lint_js"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         -- configure css server
         lspconfig["cssls"].setup({
             capabilities = capabilities,
