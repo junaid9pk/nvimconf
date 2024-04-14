@@ -124,6 +124,7 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
             filetypes = { "python" },
+            settings = { python = "python3" },
         })
 
         -- configure lua server (with special settings)
