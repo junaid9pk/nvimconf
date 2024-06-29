@@ -77,13 +77,26 @@ return {
         lspconfig["tsserver"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            settings = {
+                diagnosticSeverity = "off",  -- Disables diagnostics (linting)
+            },
+        })
+
+        -- configure volar vue-language-server with plugin
+        lspconfig["volar"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
         })
 
         -- configure quick_lint_js server with plugin
-        lspconfig["quick_lint_js"].setup({
+        --[[ lspconfig["quick_lint_js"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-        })
+            settings = {
+                diagnosticSeverity="off",
+            }
+        }) ]]
 
         -- configure css server
         lspconfig["cssls"].setup({
