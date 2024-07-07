@@ -75,18 +75,40 @@ return {
 
         -- configure typescript server with plugin
         lspconfig["tsserver"].setup({
+            init_options = {
+                plugins = {
+                    {
+                        name = "@vue/typescript-plugin",
+                        location = "/home/jd/.nvm/versions/node/v20.13.1/lib/node_modules/@vue/typescript-plugin",
+                        languages = {"javascript", "typescript", "vue"},
+                    },
+                },
+            },
             capabilities = capabilities,
             on_attach = on_attach,
             settings = {
                 diagnosticSeverity = "off",  -- Disables diagnostics (linting)
             },
+            filetypes = {
+                'javascript',
+                'typescript',
+                'javascriptreact',
+                'typescriptreact',
+                'vue',
+                'json',
+            },
         })
 
         -- configure volar vue-language-server with plugin
         lspconfig["volar"].setup({
+            init_options = {
+                typescript = {
+                    tsdk = "/home/jd/.nvm/versions/node/v20.13.1/lib/node_modules/typescript/lib"
+                }
+            },
             capabilities = capabilities,
             on_attach = on_attach,
-            filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+            filetypes = {'vue'},
         })
 
         -- configure quick_lint_js server with plugin

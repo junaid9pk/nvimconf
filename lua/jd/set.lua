@@ -24,7 +24,7 @@ vim.opt.scrolloff = 10
 vim.g.mapleader = " "
 
 vim.o.foldmethod = "expr"
-vim.o.nofoldenable = true
+-- vim.o.nofoldenable = true
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldlevel = 3
 -- vim.o.foldnestmax = 10

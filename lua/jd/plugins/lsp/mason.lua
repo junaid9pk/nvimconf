@@ -35,7 +35,7 @@ return {
                 "emmet_ls",
                 "omnisharp",
                 "intelephense",
-                "pylsp",
+                -- "pylsp",
                 "quick_lint_js",
                 "volar",
             },
@@ -48,7 +48,7 @@ return {
                 "prettier", -- prettier formatter
                 "stylua", -- lua formatter
                 "eslint_d", -- js linter
-                "pylint", -- python linter
+                -- "pylint", -- python linter
             },
         })
     end,
