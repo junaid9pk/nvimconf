@@ -1,1 +1,1 @@
-require("jd")
+require('jd')

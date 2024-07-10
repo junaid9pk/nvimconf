@@ -79,7 +79,7 @@ return {
                 plugins = {
                     {
                         name = "@vue/typescript-plugin",
-                        location = "/home/jd/.nvm/versions/node/v20.13.1/lib/node_modules/@vue/typescript-plugin",
+                        location = SETTINGS.vue_typescript_plugin_path,
                         languages = {"javascript", "typescript", "vue"},
                     },
                 },
@@ -103,7 +103,7 @@ return {
         lspconfig["volar"].setup({
             init_options = {
                 typescript = {
-                    tsdk = "/home/jd/.nvm/versions/node/v20.13.1/lib/node_modules/typescript/lib"
+                    tsdk = SETTINGS.typescript_path
                 }
             },
             capabilities = capabilities,

@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+vim.opt.guicursor = ''
 vim.opt.cursorline = true
 
 vim.o.termguicolors = true
@@ -21,11 +21,11 @@ vim.opt.smartcase = true
 
 vim.opt.scrolloff = 10
 
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
-vim.o.foldmethod = "expr"
+vim.o.foldmethod = 'expr'
 -- vim.o.nofoldenable = true
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.o.foldlevel = 3
 -- vim.o.foldnestmax = 10
 -- vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
