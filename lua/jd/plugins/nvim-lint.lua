@@ -10,6 +10,7 @@ return {
         lint.linters_by_ft = {
             javascript = { "quick-lint-js" },
             typescript = { "eslint_d" },
+            php = { "phpcs" },
             -- python = { "pylint" },
         }
 
