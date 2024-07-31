@@ -159,6 +159,13 @@ return {
             settings = { python = "python3" },
         })
 
+        -- configure bash-lsp-server
+        lspconfig["bashls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { "sh" },
+        })
+
         -- configure lua server (with special settings)
         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
