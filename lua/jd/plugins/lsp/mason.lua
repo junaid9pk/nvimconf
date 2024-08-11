@@ -49,6 +49,8 @@ return {
                 "stylua", -- lua formatter
                 "eslint_d", -- js linter
                 "phpcs", -- php linter
+                "tlint", -- php linter
+                "phpstan", -- php linter
                 -- "pylint", -- python linter
             },
         })
