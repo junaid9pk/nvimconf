@@ -33,7 +33,7 @@ return {
     keys = function ()
         local harpoon = require("harpoon"):setup()
         return {
-            { "<leader>ha", function() harpoon:list():add() end, desc = "harpoon file", },
+            { "<leader>hA", function() harpoon:list():add() end, desc = "harpoon file", },
             { "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "harpoon quick menu", },
             { "<leader>ha", function() harpoon:list():select(1) end, desc = "harpoon to file 1", },
             { "<leader>hs", function() harpoon:list():select(2) end, desc = "harpoon to file 2", },
