@@ -8,9 +8,13 @@ return {
         local lint = require("lint")
 
         lint.linters_by_ft = {
-            javascript = { "quick-lint-js" },
+            javascript = { "eslint" },
             typescript = { "eslint_d" },
-            php = { "phpcs", "tlint", "phpstan" },
+            php = {
+                -- "phpcs",
+                -- "tlint",
+                "phpstan"
+            },
             -- python = { "pylint" },
         }
 

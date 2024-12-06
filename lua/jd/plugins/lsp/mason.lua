@@ -36,7 +36,8 @@ return {
                 "omnisharp",
                 "intelephense",
                 -- "pylsp",
-                "quick_lint_js",
+                -- "quick_lint_js",
+                "eslint",
                 "volar",
             },
             -- auto-install configured servers (with lspconfig)
