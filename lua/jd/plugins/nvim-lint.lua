@@ -9,7 +9,7 @@ return {
 
         lint.linters_by_ft = {
             javascript = { "eslint" },
-            typescript = { "eslint_d" },
+            typescript = { "eslint" },
             php = {
                 -- "phpcs",
                 -- "tlint",
@@ -26,6 +26,7 @@ return {
                 lint.try_lint()
             end,
         })
+
     end
 
 }

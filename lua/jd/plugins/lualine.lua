@@ -2,6 +2,14 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = function()
+        local lint_progress = function()
+          local linters = require("lint").get_running()
+          if #linters == 0 then
+              return "󰦕"
+          end
+          return "󱉶 " .. table.concat(linters, ", ")
+        end
+
         require('lualine').setup {
             options = {
                 icons_enabled = true,
@@ -27,7 +35,7 @@ return {
                 lualine_c = {'filename'},
                 lualine_x = {'encoding', 'fileformat', 'filetype'},
                 lualine_y = {'progress'},
-                lualine_z = {'location'}
+                lualine_z = {lint_progress}
             },
             inactive_sections = {
                 lualine_a = {},
