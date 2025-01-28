@@ -57,7 +57,6 @@ return {
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
         -- Change the Diagnostic symbols in the sign column (gutter)
-        -- (not in youtube nvim video)
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
@@ -68,6 +67,7 @@ return {
         lspconfig["html"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            filetypes = { "html", "blade" },
         })
 
         -- configure typescript server with plugin
@@ -82,7 +82,14 @@ return {
                 },
             },
             capabilities = capabilities,
-            on_attach = on_attach,
+            on_attach = function(client, bufnr)
+                    on_attach(client, bufnr)
+                    local filetype = vim.bo[bufnr].filetype
+
+                    if filetype == "blade" then
+                      client.server_capabilities.documentFormattingProvider = false
+                    end
+                end,
             settings = {
                 diagnosticSeverity = "off",  -- Disables diagnostics (linting)
             },
@@ -93,6 +100,7 @@ return {
                 'typescriptreact',
                 'vue',
                 'json',
+                'blade',
             },
         })
 
@@ -133,7 +141,10 @@ return {
         lspconfig["emmet_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "blade" },
+            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+            init_options = {
+                provideFormatter = true,
+            },
         })
 
         -- configure omnisharp (c#)
@@ -148,7 +159,17 @@ return {
         lspconfig["intelephense"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            filetypes = { "php" },
+            filetypes = { "php", "blade" },
+            settings = {
+                intelephense = {
+                    environment = {
+                        phpVersion = "8.3",
+                    },
+                    stubFiles = {
+                        vim.fn.expand("~/AppData/Local/nvim/stubs/laravel.stubs.php"),
+                    },
+                },
+            },
         })
 
         -- configure python-lsp-server

@@ -1,8 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    build = function()
-        require("nvim-treesitter.install").update({ with_sync = true })()
-    end,
+    build = ":TSUpdate",
     config = function ()
         local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
         parser_config.blade = {
@@ -34,6 +32,26 @@ return {
             auto_install = true,
             highlight = {
                 enable = true,
+                additional_vim_regex_highlighting = false,
+            },
+            injections = {
+                blade = {
+                    javascript = {
+                        pattern = [[
+                            (script_element
+                            (raw_text) @javascript)
+                            (php_block
+                            (raw_text) @javascript)
+                        ]],
+                    },
+                    php = {},
+                    html = {
+                        pattern = [[
+                            (element
+                            (raw_text) @html)
+                        ]],
+                    },
+                },
             },
             indent = {
                 enable = true,

@@ -33,7 +33,10 @@ vim.o.foldlevel = 3
 vim.o.undofile = true
 
 vim.filetype.add({
-  pattern = {
-    ['.*%.blade%.php'] = 'blade',
-  }
+    extension = {
+        blade = "blade",
+    },
+    pattern = {
+        ['.*%.blade%.php'] = 'blade',
+    }
 })
