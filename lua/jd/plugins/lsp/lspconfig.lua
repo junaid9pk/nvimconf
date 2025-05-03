@@ -43,12 +43,6 @@ return {
             opts.desc = "Smart rename"
             keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
-            opts.desc = "Go to previous diagnostic"
-            keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
-
-            opts.desc = "Go to next diagnostic"
-            keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
-
             opts.desc = "Show documentation for what is under cursor"
             keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
         end
@@ -205,6 +199,19 @@ return {
                         },
                     },
                 },
+            },
+        })
+
+        -- Configure clangd for C/C++
+        lspconfig["clangd"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { "c", "cpp" },
+            cmd = {
+                "clangd",
+                "--background-index",
+                "--clang-tidy",
+                "--header-insertion=never",
             },
         })
 

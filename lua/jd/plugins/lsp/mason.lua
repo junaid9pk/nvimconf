@@ -39,6 +39,7 @@ return {
                 -- "quick_lint_js",
                 "eslint",
                 "volar",
+                "clangd",
             },
             -- auto-install configured servers (with lspconfig)
             automatic_installation = true, -- not the same as ensure_installed
@@ -53,6 +54,8 @@ return {
                 "tlint", -- php linter
                 "phpstan", -- php linter
                 -- "pylint", -- python linter
+                "clang-format",
+                "codelldb",
             },
         })
     end,
