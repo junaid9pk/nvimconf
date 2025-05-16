@@ -50,12 +50,30 @@ return {
         -- used to enable autocompletion (assign to every lsp server config)
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
-        -- Change the Diagnostic symbols in the sign column (gutter)
-        local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-        for type, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-        end
+        -- Configure diagnostics
+        vim.diagnostic.config({
+            virtual_text = {
+                prefix = "●",
+                spacing = 4,
+            },
+            signs = {
+                text = {
+                    [vim.diagnostic.severity.ERROR] = " ",
+                    [vim.diagnostic.severity.WARN] = " ",
+                    [vim.diagnostic.severity.HINT] = "󰠠 ",
+                    [vim.diagnostic.severity.INFO] = " ",
+                }
+            },
+            underline = true,
+            update_in_insert = false,
+            severity_sort = true,
+        })
+
+        -- Optional: Set highlight groups for signs
+        vim.api.nvim_set_hl(0, "DiagnosticSignError", { link = "DiagnosticError" })
+        vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { link = "DiagnosticWarn" })
+        vim.api.nvim_set_hl(0, "DiagnosticSignHint", { link = "DiagnosticHint" })
+        vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { link = "DiagnosticInfo" })
 
         -- configure html server
         lspconfig["html"].setup({
@@ -212,6 +230,33 @@ return {
                 "--background-index",
                 "--clang-tidy",
                 "--header-insertion=never",
+            },
+        })
+
+        lspconfig["dartls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = {"dart"},
+            cmd = {
+                "dart",
+                "language-server",
+                "--protocol=lsp"
+            },
+            init_options = {
+                closingLabels = true,
+                flutterOutline = true,
+                onlyAnalyzeProjectsWithOpenFiles = true,
+                outline = true,
+                suggestFromUnimportedLIbraries = true
+            },
+            root_markers = {
+                "pubspec.yaml"
+            },
+            settings = {
+                dart = {
+                    completeFunctionCalls = true,
+                    showTodos = true,
+                }
             },
         })
 
