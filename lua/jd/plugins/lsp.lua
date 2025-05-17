@@ -3,21 +3,10 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
         "hrsh7th/cmp-nvim-lsp",
         { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
-        -- Setup mason
-        require("mason").setup()
-        require("mason-lspconfig").setup({
-            ensure_installed = {
-                "html", "tsserver", "volar", "cssls", "tailwindcss",
-                "emmet_ls", "omnisharp", "intelephense", "lua_ls", "clangd"
-            },
-            automatic_installation = true,
-        })
-
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -37,7 +26,6 @@ return {
 
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
-        -- Global diagnostic settings
         vim.diagnostic.config({
             virtual_text = { prefix = "●", spacing = 4 },
             signs = {
@@ -60,7 +48,6 @@ return {
 
         local SETTINGS = _G.SETTINGS or {}
 
-        -- Setup handlers manually (you can customize per server)
         local servers = {
             html = { filetypes = { "html", "blade" } },
             ts_ls = {
