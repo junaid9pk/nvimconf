@@ -1,7 +1,14 @@
 -- system clipboard
-vim.keymap.set("n", "<leader>sy", "\"+yy")
-vim.keymap.set("n", "<leader>sp", "\"+p")
-vim.keymap.set("v", "<leader>y", "\"+Y")
+vim.keymap.set("n", "<leader>y", '"+y')           -- Yank to system clipboard (normal mode)
+vim.keymap.set("v", "<leader>y", '"+y')           -- Yank to system clipboard (visual mode)
+vim.keymap.set("n", "<leader>Y", '"+Y')           -- Yank line to system clipboard
+vim.keymap.set("n", "<leader>yy", '"+yy')         -- Explicit yank line alternative
+vim.keymap.set("n", "<leader>p", '"+p')           -- Paste from system clipboard (after cursor)
+vim.keymap.set("n", "<leader>P", '"+P')           -- Paste from system clipboard (before cursor)
+vim.keymap.set("v", "<leader>p", '"+p')           -- Paste in visual mode
+vim.keymap.set("n", "<leader>cp", '"+p')          -- Alternative paste mapping
+vim.keymap.set("n", "<leader>cb", 'gg"+yG')       -- Copy WHOLE buffer (recommended new mapping)
+vim.keymap.set("n", "<leader>cB", 'gg"+yG<C-o>')  -- Copy whole buffer and return to original position
 
 -- move text
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
