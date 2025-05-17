@@ -78,7 +78,7 @@ return {
             },
             cssls = {},
             tailwindcss = {},
-            emmet = {
+            emmet_ls = {
                 filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
                 init_options = { provideFormatter = true },
             },
