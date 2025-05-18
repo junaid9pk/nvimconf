@@ -11,7 +11,6 @@ return {
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
         local on_attach = function(client, bufnr)
-            print(client)
             local opts = { noremap = true, silent = true, buffer = bufnr }
 
             vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
@@ -121,6 +120,7 @@ return {
                     "clangd", "--background-index", "--clang-tidy", "--header-insertion=never"
                 },
             },
+            dartls = {},
         }
 
         for server, config in pairs(servers) do
