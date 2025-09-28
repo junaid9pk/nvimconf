@@ -7,10 +7,9 @@ return {
         { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
-        local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-        local on_attach = function(client, bufnr)
+        local on_attach = function(_, bufnr)
             local opts = { noremap = true, silent = true, buffer = bufnr }
 
             vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
@@ -69,7 +68,7 @@ return {
                     end
                 end
             },
-            volar = {
+            vue_ls = {
                 init_options = {
                     typescript = { tsdk = SETTINGS.typescript_path or "" },
                 },
@@ -126,7 +125,7 @@ return {
         for server, config in pairs(servers) do
             config.capabilities = capabilities
             config.on_attach = config.on_attach or on_attach
-            lspconfig[server].setup(config)
+            vim.lsp.enable(server)
         end
     end,
 }
