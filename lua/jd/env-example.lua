@@ -1,1 +1,0 @@
--- _ENV = 'Mac' | 'Windows' | 'Ubuntu'

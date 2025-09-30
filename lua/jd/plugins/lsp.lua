@@ -44,9 +44,9 @@ return {
         vim.api.nvim_set_hl(0, "DiagnosticSignHint", { link = "DiagnosticHint" })
         vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { link = "DiagnosticInfo" })
 
-        local SETTINGS = _G.SETTINGS or {}
+        local SETTINGS = require('jd.settings')
 
-        local servers = {
+        local server_configs = {
             html = { filetypes = { "html", "blade" } },
             ts_ls = {
                 init_options = {
@@ -122,9 +122,10 @@ return {
             dartls = {},
         }
 
-        for server, config in pairs(servers) do
+        for server, config in pairs(server_configs) do
             config.capabilities = capabilities
             config.on_attach = config.on_attach or on_attach
+            vim.lsp.config(server, config)
             vim.lsp.enable(server)
         end
     end,

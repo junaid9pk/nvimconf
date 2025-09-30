@@ -1,4 +1,3 @@
-require('jd.env')
 require('jd.settings')
 require('jd.set')
 require('jd.remap')
