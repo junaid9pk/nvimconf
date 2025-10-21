@@ -37,3 +37,9 @@ vim.filetype.add({
         ['.*%.blade%.php'] = 'blade',
     }
 })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    vim.b.tmux_navigator_disable = true
+  end,
+})
