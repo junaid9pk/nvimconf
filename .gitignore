@@ -1,5 +1,3 @@
 **/local_settings.lua
 lazy-lock.json
 package-lock.json
-.aider*
-!.aider.conf.yml
