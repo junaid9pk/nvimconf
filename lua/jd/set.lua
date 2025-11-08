@@ -29,6 +29,8 @@ vim.o.foldlevel = 3
 
 vim.o.undofile = true
 
+vim.opt.splitbelow = true
+
 vim.filetype.add({
     extension = {
         blade = "blade",
