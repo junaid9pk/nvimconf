@@ -120,6 +120,18 @@ return {
                 },
             },
             dartls = {},
+            pylsp = {
+                settings = {
+                    pylsp = {
+                        plugins = {
+                            pycodestyle = {
+                                -- ignore = {'E501'},
+                                maxLineLength = 120,
+                            }
+                        }
+                    }
+                }
+            },
         }
 
         for server, config in pairs(server_configs) do

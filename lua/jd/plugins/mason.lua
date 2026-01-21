@@ -26,6 +26,7 @@ return {
                 "intelephense",
                 "lua-language-server",
                 "clangd",
+                "python-lsp-server",
 
                 -- Formatters/Linters/DAPs
                 "prettier",   -- JS/TS formatter
