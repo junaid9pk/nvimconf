@@ -15,6 +15,7 @@ return {
                 -- "tlint",
                 "phpstan"
             },
+            go = { "golangcilint" },
             -- python = { "pylint" },
         }
 

@@ -27,6 +27,7 @@ return {
                 "lua-language-server",
                 "clangd",
                 "python-lsp-server",
+                "gopls",
 
                 -- Formatters/Linters/DAPs
                 "prettier",   -- JS/TS formatter
@@ -37,6 +38,10 @@ return {
                 "phpstan",    -- PHP Static Analysis
                 "pylint",     -- Python linter
                 "clang-format",-- C/C++ formatter
+                "goimports",  -- Go imports formatter
+                "gofumpt",    -- Go formatter
+                "golangci-lint",-- Go linter
+                "delve",      -- Go debugger
             },
             auto_update = false,
             run_on_start = true,

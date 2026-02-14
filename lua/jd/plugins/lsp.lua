@@ -132,6 +132,17 @@ return {
                     }
                 }
             },
+            gopls = {
+                settings = {
+                    gopls = {
+                        gofumpt = true,
+                        staticcheck = true,
+                        analyses = {
+                            unusedparams = true,
+                        },
+                    },
+                },
+            },
         }
 
         for server, config in pairs(server_configs) do

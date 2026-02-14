@@ -28,7 +28,11 @@ return {
                 "sql",
                 "c_sharp",
                 "php",
-                "blade"
+                "blade",
+                "go",
+                "gomod",
+                "gowork",
+                "gosum"
             },
             auto_install = true,
             highlight = {
